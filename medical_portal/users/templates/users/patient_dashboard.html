@@ -1,0 +1,17 @@
+<!-- patient_dashboard.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Dashboard</title>
+</head>
+<body>
+    <h1>Welcome, {{ user.username }}</h1>
+    <p>First Name: {{ user.first_name }}</p>
+    <p>Last Name: {{ user.last_name }}</p>
+    <p>Email: {{ user.email }}</p>
+    <p>Address: {{ user.patientprofile.address_line1 }}, {{ user.patientprofile.city }}, {{ user.patientprofile.state }} - {{ user.patientprofile.pincode }}</p>
+    {% if user.patientprofile.profile_picture %}
+        <img src="{{ user.patientprofile.profile_picture.url }}" alt="Profile Picture">
+    {% endif %}
+</body>
+</html>

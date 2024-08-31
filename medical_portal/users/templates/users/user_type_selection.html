@@ -1,0 +1,16 @@
+<!-- user_type_selection.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select User Type</title>
+</head>
+<body>
+    <h1>Select Your User Type</h1>
+    <form action="{% url 'redirect_to_signup' 'patient' %}" method="get">
+        <button type="submit">Patient</button>
+    </form>
+    <form action="{% url 'redirect_to_signup' 'doctor' %}" method="get">
+        <button type="submit">Doctor</button>
+    </form>
+</body>
+</html>

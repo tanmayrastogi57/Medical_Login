@@ -1,0 +1,21 @@
+<!-- signup.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Signup</title>
+</head>
+<body>
+    <h1>{% if user_type == 'patient_signup' %}Patient Signup{% else %}Doctor Signup{% endif %}</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ user_form.as_p }}
+        {{ profile_form.as_p }}
+        <button type="submit">Sign Up</button>
+    </form>
+
+    <!-- Link to the login page -->
+    <form action="{% url 'login' %}" method="get" style="margin-top: 20px;">
+        <button type="submit">Already have an account?</button>
+    </form>
+</body>
+</html>

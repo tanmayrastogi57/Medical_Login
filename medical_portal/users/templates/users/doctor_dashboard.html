@@ -1,0 +1,18 @@
+<!-- doctor_dashboard.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Doctor Dashboard</title>
+</head>
+<body>
+    <h1>Welcome, {{ user.username }}</h1>
+    <p>First Name: {{ user.first_name }}</p>
+    <p>Last Name: {{ user.last_name }}</p>
+    <p>Email: {{ user.email }}</p>
+    <p>Specialization: {{ user.doctorprofile.specialization }}</p>
+    <p>Address: {{ user.doctorprofile.address_line1 }}, {{ user.doctorprofile.city }}, {{ user.doctorprofile.state }} - {{ user.doctorprofile.pincode }}</p>
+    {% if user.doctorprofile.profile_picture %}
+        <img src="{{ user.doctorprofile.profile_picture.url }}" alt="Profile Picture">
+    {% endif %}
+</body>
+</html>
